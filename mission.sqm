@@ -5,12 +5,16 @@ class Mission
 	{
 		"cacharacters2",
 		"chernarus",
-		"ca_modules_functions"
+		"ca_modules_functions",
+		"castructures_e_misc_misc_garbage",
+		"castructures_e_misc_misc_construction"
 	};
 	addOnsAuto[]=
 	{
 		"cacharacters2",
 		"ca_modules_functions",
+		"castructures_e_misc_misc_garbage",
+		"castructures_e_misc_misc_construction",
 		"chernarus"
 	};
 	randomSeed=15052954;
@@ -66,16 +70,33 @@ class Mission
 			};
 		};
 	};
-	class Markers
+	class Vehicles
 	{
 		items=2;
 		class Item0
 		{
-			position[]={7193.2676,303.2363,7701.4097};
-			name="radiation_0";
-			type="hd_warning";
+			position[]={7284.4146,296.53339,7673.6494};
+			id=2;
+			side="EMPTY";
+			vehicle="Land_Misc_Garb_Heap_EP1";
+			skill=0.60000002;
+			init="nil = [this, [""garbage""]] execVM ""loot_spawn.sqf""";
 		};
 		class Item1
+		{
+			position[]={7207.6738,293.98999,7690.9438};
+			azimut=197.1544;
+			id=3;
+			side="EMPTY";
+			vehicle="Land_Misc_Rubble_EP1";
+			skill=0.60000002;
+			init="nil = [this] execVM ""radiation_source.sqf""";
+		};
+	};
+	class Markers
+	{
+		items=1;
+		class Item0
 		{
 			position[]={6953.6294,294.09,7693.2964};
 			name="radiation_1";

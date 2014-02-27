@@ -8,7 +8,7 @@ class CfgSounds
 		// how the sound is referred to in the editor (e.g. trigger effects)
 		name = "wind";
 		// filename, volume, pitch
-		sound[] = {"wind.ogg", 1, 1};
+		sound[] = {"resources\wind.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text 
 		titles[] = {0, ""};
 	};
