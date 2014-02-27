@@ -2,7 +2,7 @@ hintSilent format ["
 DEBUG MONITOR:
 \n
 \n
-Radiation Level: %1
+Disintegrations: %1
 \n
 Collected Dose: %2
 \n
@@ -13,7 +13,8 @@ Health: %4
 \n
 Inventory: %5
 ",
-	_radiationLevel*250,
+	//_radiationLevel*250,
+	_unit getVariable "hit_by",
 	_unit getVariable "collected_dose",
 	_unit getVariable "time_since",
 	100*(1-(damage _unit)), // damage -> health in percent
