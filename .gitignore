@@ -1,0 +1,7 @@
+wind.ogg # Because it's open in Arma, it doesn't get deleted when switching to this branch.
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
