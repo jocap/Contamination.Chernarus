@@ -24,7 +24,7 @@ while {true} do
 		{_radiationLevel = 0.4};
 
 	// Decrease collected dose after 45 seconds >100 meters from a radiation source
-	if (_radiationLevel == 0) then { _unit setVariable ["time_since", (_unit getVariable "time_since") + 0.5] };
+	if (_radiationLevel == 0) then { [_unit, "time_since", 0.5] call fnc_addToVar };
 	if (_unit getVariable "time_since" > 45 && {_unit getVariable "collected_dose" > 0}) then
 		{ _unit setVariable ["collected_dose", (_unit getVariable "collected_dose") - 1/128] };
 	if (_unit getVariable "collected_dose" < 0) then { _unit setVariable ["collected_dose", 0] };
@@ -34,7 +34,7 @@ while {true} do
 	//if (filter in items _unit) then { _k = 1/64 };
 	//if (gasmask in items _unit) then { _k = 1/256 };
 	//if (hazmat in items _unit) then { _k = 0 }; // if unit has hazmat suit, he needs a radio to talk to people. direct comm won't work
-	_unit setVariable ["collected_dose", (_unit getVariable "collected_dose") + _k*_radiationLevel];
+	[_unit, "collected_dose", _k*_radiationLevel] call fnc_addToVar;
 
 	// Acquire radiation sickness if dose >= 50
 	// and randomize the agony animation when sick
@@ -50,9 +50,7 @@ while {true} do
 			{ [_unit] call fnc_anim_agony };
 	};
 
-	// Debug console
-	hintSilent format ["DEBUG MONITOR:\n\nRadiation Level: %1\nCollected Dose: %2\nTime Since Exposed: %3\nHealth: %4",
-		_radiationLevel*250, _unit getVariable "collected_dose", _unit getVariable "time_since", 100*(1-(damage _unit))];
+	_unit call fnc_debugMonitor;
 
 	sleep 0.5;
 };

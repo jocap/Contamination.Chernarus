@@ -16,7 +16,7 @@ _object addAction [
 	, _type
 	, 10
 	, true
-	, true
+	, false
 	, ""
 	, "(position _this) distance (position _target) <= 3"
 ];

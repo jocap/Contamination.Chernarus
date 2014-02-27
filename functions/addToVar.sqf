@@ -1,0 +1,1 @@
+(_this select 0) setVariable [_this select 1, (((_this select 0) getVariable (_this select 1)) + (_this select 2))];
