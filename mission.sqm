@@ -85,7 +85,7 @@ class Mission
 		class Item1
 		{
 			position[]={7207.6738,293.98999,7690.9438};
-			azimut=197.1544;
+			azimut=197.15401;
 			id=3;
 			side="EMPTY";
 			vehicle="Land_Misc_Rubble_EP1";

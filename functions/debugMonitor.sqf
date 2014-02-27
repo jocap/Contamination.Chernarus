@@ -1,3 +1,5 @@
+_unit = _this;
+
 hintSilent format ["
 DEBUG MONITOR:
 \n

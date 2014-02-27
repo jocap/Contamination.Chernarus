@@ -1,6 +1,9 @@
+sleep 0.1;
+
 _unit = _this select 0;
 
 _unit setVariable ["hit_by", 0];
+_unit setVariable ["collected_dose", 0];
 _unit setVariable ["inventory", []];
 
 while {true} do
@@ -11,5 +14,5 @@ while {true} do
 
 	_unit call fnc_debugMonitor;
 
-	sleep 0.5;
+	sleep 0.005;
 };

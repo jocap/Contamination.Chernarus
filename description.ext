@@ -12,4 +12,10 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text 
 		titles[] = {0, ""};
 	};
+	class click
+	{
+		name = "click";
+		sound[] = {"resources\click.ogg", 1, 1};
+		titles[] = {0, ""};
+	};
 };
