@@ -9,10 +9,13 @@ _unit = _this;
 		if (_relDir > (_angle - 5) and {_relDir < (_angle + 5)} and {_unit distance (_x select 0) <= 50}) then
 		{
 			[_unit, "hit_by", 1] call fnc_addToVar;
-			if (floor(random 2) == 0) then {
+			_risk = 50; // in percent
+			if ("used_filter" in (_unit getVariable "inventory")) then { _risk = 25 };
+			if ("gasmask" in (_unit getVariable "inventory")) then { _risk = 12.5 };
+			if (floor(random 100)+1 <= _risk) then {
 				[_unit, "collected_dose", 1] call fnc_addToVar;
 			};
-			playSound "click";
+			if ("gm" in (_unit getVariable "inventory")) then { playSound "click" };
 		};
 	};
 } forEach isotopes;
