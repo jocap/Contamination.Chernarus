@@ -3,6 +3,11 @@
 *:not(pre|code) {
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
+header h1 code {
+  font-size: 20px;
+}
+
 body {
   padding:50px;
   font:14px/1.5 Helvetica, Arial, sans-serif;
