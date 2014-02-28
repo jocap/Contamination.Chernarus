@@ -1,23 +1,34 @@
 execVM "effects.sqf";
 
+TIMER = 0.005;
+publicVariable "TIMER";
+
 // Functions
-fnc_anim_agony = compile preprocessFileLineNumbers "functions\anim_agony.sqf";
-fnc_addToVar = compile preprocessFileLineNumbers "functions\addToVar.sqf";
-fnc_debugMonitor = compile preprocessFileLineNumbers "functions\debugMonitor.sqf";
-fnc_SHK_pos = compile preprocessFileLineNumbers "functions\SHK_pos.sqf";
-fnc_exposed = compile preprocessFileLineNumbers "functions\exposed.sqf";
-publicVariable "fnc_anim_agony";
-publicVariable "fnc_addToVar";
-publicVariable "fnc_debugMonitor";
-publicVariable "fnc_SHK_pos";
-publicVariable "fnc_exposed";
+
+_functions = [
+	"anim_agony"
+	, "addToVar"
+	, "debugMonitor"
+	, "SHK_pos"
+	, "registerHits"
+	, "inInventory"
+	, "arrayToString"
+	, "getItemName"
+	, "map"
+	, "capitalize"
+	, "getWeight"
+]; // Is there any way to list files in a directory in SQF?  Because that would be great in this case.
+
+{ call compile format ["fnc_%1 = compile preprocessFileLineNumbers ""functions\%1.sqf""; publicVariable ""fnc_%1""", _x] }
+	forEach _functions;
 
 // Radiation
 radiation_sources = [];
 publicVariable "radiation_sources";
 
-execVM "radiation\isotopes.sqf";
+execVM "radiation\spawnParticles.sqf";
 
-// Random spooky wind sound
 while {true} do
-	{playSound "wind"; sleep ((round(random 5)+1)*30)};
+{
+	playSound "wind"; sleep ((round(random 5)+1)*30); // Random spooky wind sound
+};

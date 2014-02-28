@@ -76,31 +76,32 @@ class Mission
 		class Item0
 		{
 			position[]={7284.4146,296.53339,7673.6494};
+			azimut=175;
 			id=2;
 			side="EMPTY";
 			vehicle="Land_Misc_Garb_Heap_EP1";
 			skill=0.60000002;
-			init="nil = [this, [""garbage""]] execVM ""loot_spawn.sqf""";
+			init="nil = [this, [""garbage""]] execVM ""inventory\init.loot.sqf""";
 		};
 		class Item1
 		{
-			position[]={7207.6738,293.98999,7690.9438};
+			position[]={7207.6738,294.41678,7690.9438};
 			azimut=197.15401;
 			id=3;
 			side="EMPTY";
 			vehicle="Land_Misc_Rubble_EP1";
 			skill=0.60000002;
-			init="nil = [this] execVM ""radiation_source.sqf""";
+			init="nil = [this] execVM ""radiation\init.sqf""";
 		};
 		class Item2
 		{
 			position[]={7260.4277,293.90121,7658.4961};
-			azimut=179.5499;
+			azimut=179.55;
 			id=4;
 			side="EMPTY";
 			vehicle="Land_Misc_Garb_Heap_EP1";
 			skill=0.60000002;
-			init="nil = [this, [""garbage""]] execVM ""loot_spawn.sqf""";
+			init="nil = [this, [""garbage""]] execVM ""inventory\init.loot.sqf""";
 		};
 	};
 	class Markers

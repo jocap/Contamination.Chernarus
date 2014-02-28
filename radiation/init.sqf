@@ -1,5 +1,5 @@
 _object = _this select 0;
-_options = if (count _this > 1) then { _this select 1 } else { [] };
+// May add options like strength in the future
 
 radiation_sources = radiation_sources + [_object];
 publicVariable "radiation_sources";

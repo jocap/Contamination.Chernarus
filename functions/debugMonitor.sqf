@@ -1,5 +1,3 @@
-_unit = _this;
-
 hintSilent format ["
 DEBUG MONITOR:
 \n
@@ -12,13 +10,17 @@ Time Since Exposed: %3
 \n
 Health: %4
 \n
+Weight Carried: %5 kg
 \n
-Inventory: %5
+\n
+Inventory:
+\n
+%6
 ",
-	//_radiationLevel*250,
-	_unit getVariable "hit_by",
-	_unit getVariable "collected_dose",
-	_unit getVariable "time_since",
-	100*(1-(damage _unit)), // damage -> health in percent
-	str(_unit getVariable "inventory")
+	_this getVariable "hit_by"
+	, _this getVariable "collected_dose"
+	, _this getVariable "time_since"
+	, 100*(1-(damage _this)) // damage -> health in percent
+	, _this getVariable "weight"
+	, ([_this getVariable "inventory", { [_this select 0, false, true] call fnc_getItemName }] call fnc_map) call fnc_arrayToString
 ];

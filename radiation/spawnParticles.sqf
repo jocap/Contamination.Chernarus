@@ -28,15 +28,10 @@ _createIsotope = {
 
 _createIsotopes = {
 	_source = _this;
-	// -- 25 m => 400 isotopes
-	// -- 75 m => 200 isotopes
-	// -- 125 => 100 isotopes
-	for "_n" from 1 to 700 do
+	// 400 isotopes spawned within 25 meters of source
+	for "_n" from 1 to 400 do
 	{
-		// This appears not to be working -- it seems only the first statement of the three is executed.
-		if (_n <= 400) then { [([position _source, random 360, 25] call fnc_SHK_pos)] call _createIsotope };
-		if (_n > 400 and {_n <= 600}) then { [([position _source, random 360, [25,75]] call fnc_SHK_pos)] call _createIsotope };
-		if (_n > 600 and {_n <= 700}) then { [([position _source, random 360, [75,125]] call fnc_SHK_pos)] call _createIsotope };
+		[([position _source, random 360, 25] call fnc_SHK_pos)] call _createIsotope;
 	};
 };
 
