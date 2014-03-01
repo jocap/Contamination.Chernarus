@@ -1,6 +1,7 @@
 {
 	if (_x select 1) then
 	{
+		waitUntil { !(isNil "BIS_fnc_init") };
 		_relDir = [_this, _x select 0] call BIS_fnc_relativeDirTo;
 		_angle = _x select 2;
 
@@ -9,8 +10,6 @@
 		if (_relDir > (_angle - _plusminus) and {_relDir < (_angle + _plusminus)}) then
 		{
 			[_this, "hit_by", 1] call fnc_addToVar; // Updates the amount of disintegrations detected by GM counter
-			
-			playSound "click"; // GM ticking sound!
 			
 			// Different risk to "collect" the particle (basically, take cell damage or inhale it) for different gear
 			_risk = 50; // in percent
@@ -21,7 +20,7 @@
 				[_this, "collected_dose", 1] call fnc_addToVar;
 			};
 
-			
+			if ([_unit, "gm"] call fnc_inInventory) then { playSound "click" }; // GM ticking sound! // Bugs out titleTexts
 		};
 	};
 } forEach isotopes;

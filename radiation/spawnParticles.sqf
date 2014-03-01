@@ -1,5 +1,7 @@
 // Simulates unstable isotopes that decay randomly.
 
+waitUntil { count radiationSources > 0 };
+
 isotopes = [];
 publicVariable "isotopes";
 
@@ -36,7 +38,7 @@ _createIsotopes = {
 };
 
 sleep 0.5;
-{ _x call _createIsotopes } forEach radiation_sources;
+{ _x call _createIsotopes } forEach radiationSources;
 
 while {true} do
 {

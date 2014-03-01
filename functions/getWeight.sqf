@@ -7,7 +7,7 @@ switch (_this select 1) do // type
 {
 	case "item":
 	{
-		switch (_this select 0) do // weapon
+		switch (_this select 0) do // item
 		{
 			case "gm": { _w = 0.091 };
 			case "used_filter": { _w = 0.001 };

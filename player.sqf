@@ -1,19 +1,15 @@
-sleep 0.1;
+cutText ["", "BLACK FADED", 2];
+waitUntil { serverInitDone };
+sleep 1;
+cutText ["", "BLACK IN", 0];
+execVM "effects.sqf";
+["",  str(date select 1) + "." + str(date select 2) + "." + str(2011), "Somewhere in Chernarus"] spawn BIS_fnc_infoText;
 
 _unit = _this select 0;
 
 _unit setVariable ["hit_by", 0];
 _unit setVariable ["weight", 0];
 _unit setVariable ["collected_dose", 0]; // Sickness will be reached by 1200 collected dose.
-_unit setVariable ["inventory", ["gm", "used_filter"]];
+_unit setVariable ["inventory", []];
 
-while {true} do
-{
-	_unit execVM "inventory\weight.sqf";
-
-	_unit call fnc_registerHits;
-
-	_unit call fnc_debugMonitor;
-
-	sleep TIMER;
-};
+_unit call compile preprocessFileLineNumbers "loops\player.sqf";

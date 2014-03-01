@@ -20,7 +20,7 @@ Inventory:
 	_this getVariable "hit_by"
 	, _this getVariable "collected_dose"
 	, _this getVariable "time_since"
-	, 100*(1-(damage _this)) // damage -> health in percent
+	, str([100*(1-(damage _this)), 2] call fnc_formatNumber) + "%" // damage -> health in percent
 	, _this getVariable "weight"
 	, ([_this getVariable "inventory", { [_this select 0, false, true] call fnc_getItemName }] call fnc_map) call fnc_arrayToString
 ];

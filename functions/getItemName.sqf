@@ -4,8 +4,9 @@ _capitalize = false;
 if ("ARRAY" == typeName _this) then
 {
 	_item = _this select 0;
-	__article = [_this, 1, false, [true]] call BIS_fnc_param; // whether to add "a" or "an"
-	_capitalize = [_this, 2, false, [true]] call BIS_fnc_param; // whether to capitalize the first letter
+	waitUntil { !(isNil "BIS_fnc_init") };
+	__article = [_this, 1, false, [true, objNull]] call BIS_fnc_param; // whether to add "a" or "an"
+	_capitalize = [_this, 2, false, [true, objNull]] call BIS_fnc_param; // whether to capitalize the first letter
 };
 
 _name = _item;

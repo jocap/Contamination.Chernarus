@@ -24,7 +24,7 @@ _gm_roll = floor(random 99) + 1;
 _used_filter_roll = floor(random 99) + 1;
 _gas_mask_roll = floor(random 99) + 1;
 
-if (true or _gm_roll <= _gm_chance or {_used_filter_roll <= _used_filter_chance} or {_gas_mask_roll <= _gas_mask_chance}) then
+if (_gm_roll <= _gm_chance or {_used_filter_roll <= _used_filter_chance} or {_gas_mask_roll <= _gas_mask_chance}) then
 {
 	_item = "something";
 	// The item that was rolled and had the smallest chance wins
