@@ -29,6 +29,11 @@ switch (_item) do
 		_article = "a";
 		_name = "gas mask";
 	};
+	case "vodka":
+	{
+		_article = "a";
+		_name = "bottle of vodka";
+	};
 };
 
 if (__article) then

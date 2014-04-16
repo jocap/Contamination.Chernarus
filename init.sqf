@@ -29,8 +29,8 @@ if (isServer) then // executes on server
 	// Radiation
 	radiationSources = [];
 	publicVariable "radiationSources";
-
-	execVM "radiation\spawnParticles.sqf";
+	// Spawn particles
+	execVM "radiation\atoms.sqf";
 
 	serverInitDone = true;
 	publicVariable "serverInitDone";

@@ -20,7 +20,7 @@ class Mission
 	randomSeed=15052954;
 	class Intel
 	{
-		startWeather=0.14784181;
+		startWeather=0.95495516;
 		forecastWeather=0.25798482;
 		year=2008;
 		month=10;
@@ -39,7 +39,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7293.2881,297.86139,7673.4238};
+					position[]={7299.1924,298.71533,7673.0313};
 					azimut=-90.80246;
 					id=0;
 					side="WEST";
@@ -91,7 +91,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Misc_Rubble_EP1";
 			skill=0.60000002;
-			init="nil = [this] execVM ""radiation\init.sqf""";
+			init="nil = [this, 1] execVM ""radiation\init.sqf""";
 		};
 		class Item2
 		{

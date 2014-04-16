@@ -23,4 +23,4 @@
 			if ([_unit, "gm"] call fnc_inInventory) then { playSound "click" }; // GM ticking sound! // Bugs out titleTexts
 		};
 	};
-} forEach isotopes;
+} forEach atoms;
